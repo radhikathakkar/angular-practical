@@ -1,0 +1,29 @@
+<!-- <mat-grid-list row='2'>
+    <p> test </p>
+</mat-grid-list> -->
+
+<div class="main-container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div>
+      <label for="email"> Email </label>
+      <input type="email" name="email" id="email" ngModel />
+    </div>
+    <div>
+      <label for="password"> Password </label>
+      <input type="password" name="password" id="password" ngModel />
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label> Select Role </mat-label>
+        <mat-select [(ngModel)]="role" (ngModelChange)="onSelectRole($event)" name="role">
+          <mat-option value="user"> User </mat-option>
+          <mat-option value="admin"> Admin </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <button type="submit">Login</button>
+      <button (click)="signUp()">Sign Up</button>
+    </div>
+  </form>
+</div>

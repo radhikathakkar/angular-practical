@@ -1,0 +1,93 @@
+<!-- Reactive Form -->
+
+<div class="main-container">
+  <!-- <h4> SignUp </h4> -->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Firstname </mat-label>
+        <input
+          type="text"
+          matInput
+          name="firstname"
+          id="firstname"
+          formControlName="firstName"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>lastName </mat-label>
+        <input
+          type="text"
+          matInput
+          name="lastName"
+          id="lastName"
+          formControlName="lastName"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>email </mat-label>
+        <input
+          type="email"
+          matInput
+          name="email"
+          id="email"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="signupData.email.touched && signupData.email.invalid"
+      >
+        Please Enter email address
+        <!-- <div *ngIf="signupData.email.errors.required">
+        
+        </div> -->
+        <!-- <div *ngIf="signupData.email.errors.email"> Please Enter valid email address </div> -->
+      </div>
+    </div>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>password </mat-label>
+        <input
+          type="password"
+          matInput
+          name="password"
+          id="password"
+          formControlName="password"
+          required
+        />
+      </mat-form-field>
+      <div
+        class="alert alert-danger"
+        *ngIf="signupData.password.touched && signupData.password.invalid"
+      >
+        Please Enter Password
+      </div>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>dob </mat-label>
+        <input type="date" matInput name="dob" id="dob" formControlName="dob" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label> Select Role </mat-label>
+        <mat-select formControlName="role" >
+            <mat-option value="user"> User </mat-option>
+            <mat-option value="admin"> Admin </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <button type="submit" mat-button color="primary" [disabled]="signupForm.invalid">Sign Up</button>
+  </form>
+</div>

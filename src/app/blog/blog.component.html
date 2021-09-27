@@ -1,0 +1,23 @@
+<div class="main-container">
+  <div>
+    <a mat-a color="primary" routerLink="add-blog" *ngIf="currentUser.token && role==='user'"
+      >Add Card</a
+    >
+  </div>
+  <div>
+    <a mat-a color="primary" (click)="logout()">Logout</a>
+  </div>
+  <div class="data" *ngIf="blogs.length > 0">
+    <mat-card *ngFor="let blog of blogs">
+      <mat-card-header>
+        {{ blog.title }}
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ blog.description }}
+        </p>
+        <h6>{{ blog.status }}</h6>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

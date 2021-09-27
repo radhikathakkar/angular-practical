@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.main-container{
+    width: 70%;
+    margin: 0px auto;
+}
+
+.main-container .signup-form{
+    width: 80%;
+    text-align: center;
+    margin: 5rem auto;
+}
+
+.main-container .signup-form mat-form-field {
+    width: 25em;
+}
+
+a{
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button{
+    cursor: pointer;
+}

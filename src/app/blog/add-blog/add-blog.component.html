@@ -1,0 +1,53 @@
+<!-- Reactive Form -->
+
+<div class="main-container">
+  <!-- <h4> SignUp </h4> -->
+  <form [formGroup]="addBlogForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Title </mat-label>
+        <input
+          type="text"
+          matInput
+          name="title"
+          id="title"
+          formControlName="title"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Description </mat-label>
+        <input
+          type="text"
+          matInput
+          name="description"
+          id="description"
+          formControlName="description"
+        />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Status </mat-label>
+        <input
+          type="text"
+          matInput
+          name="status"
+          id="status"
+          formControlName="status"
+        />
+      </mat-form-field>
+    </div>
+
+    <button
+      type="submit"
+      mat-button
+      color="primary"
+      [disabled]="addBlogForm.invalid"
+    >
+      Add Blog
+    </button>
+  </form>
+</div>
